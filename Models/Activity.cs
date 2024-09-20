@@ -12,4 +12,5 @@ public class Activity
     public DateTime? Calendar { get; set; }
     public string? Image { get; set; }
     public bool? IsPublic { get; set; }
+
 }

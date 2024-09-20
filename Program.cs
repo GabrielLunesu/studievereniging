@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using StudieVereniging.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add DbContext configuration
+builder.Services.AddDbContext<StudieVerenigingContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("StudieVerenigingContext")));
 
 var app = builder.Build();
 
